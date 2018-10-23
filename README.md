@@ -8,7 +8,7 @@ Velg deretter HTTP integration.
 
 Du vil bli presentert med følgende meny.
 
-![Add integration](img/add_integration.php)
+<img src="img/add_integration.png">
 
 * Gi prosessen et selvvalgt navn, det kan være hva som helst.
 * Trykk på Access Key og velg default key.
