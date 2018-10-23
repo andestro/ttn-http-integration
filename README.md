@@ -19,6 +19,7 @@ Du vil bli presentert med følgende meny.
 * Trykk på *Add integration.* 
 
 Nå er din HTTP integration kjørende!   
+
 Neste gang The Things Network-applikasjonen din mottar en pakke fra en device vil dette sendes til scriptet ditt. Hvis alt fungerer slik det skal vil *dump-text.php* lagre JSON-dataen fra TTN i file *received_json.txt* på hjemmeområdet ditt. Sjekk gjerne at dette fungerer, ved å gå til f.eks. http://folk.ntnu.no/brukernavn/received_json.txt. Hvis du ikke får sendt pakker fra The Things Uno-en din kan du simulere en upload ved å velge devicen din på The Things Network-sida og sende en Payload via SIMULATE UPLINK-feltet. Ta gjerne en kikk på hvilken informasjon som blir lagret, det er mye mer data enn kun "nyttelasten" (payloaden) fra Devicen. Hva vil dere bruke? 
 
 # Enkel lagring av data
@@ -26,6 +27,8 @@ Det er ikke nødvendigvis så nyttig å ha en oppdatert tekstfil med hele JSON-f
 
 Nå ønsker vi å sende pakken vår til et annet script (denne gangen til *save-data.php*, som også må ligge på hjemmeområdet). For å endre destinasjon går vi simpelthen inn på HTTP-integrasjonen vi lagde og endrer URL-en til å peke til *save-data.php*. Dataen blir nå sendt til det nye scriptet neste gang en pakke sendes. 
 
-Det nye scriptet bygger på det forrige, men det inneholder litt mer PHP-kode, noe som kan være ukjent for dere som ikke har sett det før. Derfor har vi kommentert dette scriptet slik at det skal være mulig å se hva de ulike delene gjør. Kort fortalt laster vi JSON-dataen inn i et PHP-array. Vi velger deretter ut noen utvalgte datafelt (time, led-status og gateways). Deretter lagrer vi dette til en fil *datalog.txt* der hver nye pakke blir en ny linje i fila. Sjekk gjerne at fila vokser etter hvert som vi mottar flere pakker fra The Things Network.
+Det nye scriptet bygger på det forrige, men det inneholder litt mer PHP-kode, noe som kan være ukjent for dere som ikke har sett det før. Derfor har vi kommentert dette scriptet slik at det skal være mulig å se hva de ulike delene gjør. Kort fortalt laster vi JSON-dataen inn i et PHP-array. Vi velger deretter ut noen utvalgte datafelt (time, led-status og gateways). Deretter lagrer vi dette til en fil *datalog.txt* der hver nye pakke blir en ny linje i fila. Sjekk gjerne at fila vokser etter hvert som vi mottar flere pakker fra The Things Network. 
+
+**Pass på!** Denne fila vil bare vokse med mindre du gjør noe med den, vær derfor oppmerksom på at du kan ende opp med en veldig stor fil om du sender mye data ofte. 
 
 Dette scriptet viser **prinsippet** at det er mulig å ta imot data fra en LoRa-device og vise det på en nettside. Når dataen havner på hjemmeområdet deres er det opp til dere hvordan dere vil behandle den og hvordan dere vil fremstille den. En forbedring av dette scriptet ville for eksempel være å sette opp en egen database og lagre dataen der, i stedet for direkte i en tekstfil. En annen idé kan være å behandle dataen mer, kanskje gjøre noen beregninger eller vise den frem på en fin måte før man lagrer den. 
