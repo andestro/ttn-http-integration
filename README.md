@@ -40,7 +40,7 @@ I fila *hjemmeside.php* har vi laget en helt enkel hjemmeside. Selv om fila er e
 
 Alt PHP-koden gjør er å åpne filen *datalog.txt* og laste den inn i en egen variabel kalt `$lines` (i PHP skal alle variabelnavn starte med `$`). `$lines` er en liste over linjene i fila. Deretter finner vi den siste linja i lista og spytter den ut til nettsiden ved hjelp av kommandoen `echo`. Det vi printer med `echo` havner i HTML-koden der vi har satt inn PHP-scriptet vårt. Resultatet vil se omtrent slik ut: 
 
-<img src="img/ledstatus.png">
+<img src="img/ledstatus.png" align="middle">
 
 Dette er et ganske enkelt eksempel som verken gjør mye eller ser bra ut, men det viser hvordan vi kan bruke et PHP-script i en nettside bygget opp av HTML til å hente ut info fra en fil. Hver gang vi går til sida http://folk.ntnu.no/brukernavn+filplassering/hjemmeside.php vil scriptet kjøres. Ettersom *datalog.txt* oppdateres hver gang LoRa-devicen sender en pakke vil hjemmesida vår hente ut siste mottatte pakke fra den nederste linja i *datalog.txt*.
 
