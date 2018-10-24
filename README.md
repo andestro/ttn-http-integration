@@ -45,3 +45,9 @@ Alt PHP-koden gjør er å åpne filen *datalog.txt* og laste den inn i en egen v
 Dette er et ganske enkelt eksempel som verken gjør mye eller ser bra ut, men det viser hvordan vi kan bruke et PHP-script i en nettside bygget opp av HTML til å hente ut info fra en fil. Hver gang vi går til sida http://folk.ntnu.no/brukernavn+filplassering/hjemmeside.php vil scriptet kjøres. Ettersom *datalog.txt* oppdateres hver gang LoRa-devicen sender en pakke vil hjemmesida vår hente ut siste mottatte pakke fra den nederste linja i *datalog.txt*.
 
 Det er fullt mulig å bygge videre på dette. For eksempel kan man modifisere *save-data.php* til å lagre fint formatert data (f.eks. "PÅ"/"AV" i stedet for "1"/"", slik det er nå). Man kan også lage en litt mer avansert hjemmeside som bruker mer PHP til å gjøre noe med dataen vi henter ut og bruker denne dataen til å endre HTML-utseendet eller flere felter i HTML-en. I neste seksjon skal vi gi et litt større eksempel på en hjemmeside. 
+
+# Statusside med dynamisk layout og integrert data
+
+Dette eksempelet finner du i *ledstatus.php*. I denne fila skjer det litt mer. Data fra *datalog.txt* blir behandlet og plassert på ulike steder i HTML-koden. I tilleg har den et utseende som endrer seg avhengig av hva LoRa-devicen vår sender. Sjekk gjerne ut http://folk.ntnu.no/andestro/ttn/led.php for en operativ nettside. Så lenge TTN Uno-en min kjører så vil den skru av og på LED-en sin cirka hvert 30. sekund og dette blir rapportert til siden. 
+
+Mer forklarende informasjon om denne koden kommer, men det er lov å ta en titt på fila (som er kommentert) og se om du klarer å endre på den for å få til noe du er interessert i. 
