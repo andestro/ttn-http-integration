@@ -1,6 +1,8 @@
 ## Bakgrunn
 Denne guiden er kun ment som et eksempel på hvordan man kan sette opp The Things Network til å sende data til sin egen side og hvordan man kan fange og lagre denne dataen. Dette er ikke ment som et prakteksempel på bruken av TTN eller HTTP integration, men det er et fungerende eksempel som viser at det er fullt mulig å fange og lagre data fra en LoRa-device ved hjelp av TTN og vise dette på en nettside. 
 
+Denne guiden er inspirert av [elsysDemo](https://github.com/amundas/elsysDemo) av Amund Askeland.
+
 # Sette opp HTTP Integration til folk.ntnu.no-hjemmeside
 Følg standardprosedyren for TTN Quick Start.
 På The Things Network-nettsiden, gå til din Application og trykk på fanen **"integrations".**
