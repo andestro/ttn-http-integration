@@ -33,5 +33,4 @@ Det nye scriptet bygger på det forrige, men det inneholder litt mer PHP-kode, n
 
 Dette scriptet viser **prinsippet** at det er mulig å ta imot data fra en LoRa-device og vise det på en nettside. Når dataen havner på hjemmeområdet deres er det opp til dere hvordan dere vil behandle den og hvordan dere vil fremstille den. En forbedring av dette scriptet ville for eksempel være å sette opp en egen database og lagre dataen der, i stedet for direkte i en tekstfil. En annen idé kan være å behandle dataen mer, kanskje gjøre noen beregninger eller vise den frem på en fin måte før man lagrer den. 
 
-# Lagring til database
 
