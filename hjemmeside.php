@@ -6,9 +6,9 @@
 		<h1>Er LED-en på?</h1>
 		<p> Siste status: <br>
 			<?php 
-				$lines = file('datalog.txt');
-				$last_line = $lines[count($lines)-1];
-				echo $last_line;
+				$lines = file('datalog.txt');	// Open datalog.txt and put it in a $lines array
+				$last_line = $lines[count($lines)-1];	// Access the last line of the $lines array
+				echo $last_line;	// echo (a.k.a. print) the last line
 			?>
 		</p>
 	</body>
