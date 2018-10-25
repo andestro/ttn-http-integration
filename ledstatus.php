@@ -2,7 +2,12 @@
 	<head>
 		<title>Er LED-en på?</title>
 		<style>
-		/* Alt som står inni denne <style>-taggen er bare for å få sida til å se litt finere ut */
+		/* 	Alt som står inni denne <style>-taggen er bare for å få sida til å se litt finere ut 
+		 	Først definerer vi stilen for noen vanlige HTML-tags og så legger vi til våre egne
+		 	"stilklasser". Ved hjelp av stilklassene kan vi bestemme hvordan de elementene som blir
+		 	tildelt stilklassen ser ut. En stilklasse tildeles en HTML-tag ved å putte den inni
+		 	taggens class="". 
+		*/
 			body, html {
 				height: 100%;
 				margin: 0;
@@ -62,7 +67,11 @@
 			// Her er dette nødvendig for at PHP skal kjenne igjen at " " er false.
 			$gateways = trim($data[2]);	// Tredje kolonne er gateway-tilkoblingene
 
-			// Ettersom tidsformatet vi får inn i variabelen $rawtime (fra $data[0]) er litt merkelig vil vi formatere det mer fornuftig slik at vi kan jobbe lettere med det. Dette ser kanskje litt gresk ut, og det kan ofte bli slik når man jobber med ulike tidsformat. Her gjelder det å klippe og lime ut fra de eksemplene man ser på nettet, og så kommer det med erfaring.
+			// Ettersom tidsformatet vi får inn i variabelen $rawtime (fra $data[0]) er litt merkelig 
+			// vil vi formatere det mer fornuftig slik at vi kan jobbe lettere med det. Dette ser 
+			// kanskje litt gresk ut, og det kan ofte bli slik når man jobber med ulike tidsformat.
+			// Her gjelder det å klippe og lime ut fra de eksemplene man ser på nettet, og så kommer 
+			// det med erfaring.
 			date_default_timezone_set('Europe/Oslo');
 			$timeinseconds = strtotime(substr($rawtime,0,-2).'Z');
 			$updatetime = date("Y-m-d H:i:s", $timeinseconds); 
@@ -75,8 +84,10 @@
 		<h1>Er LED-en på?</h1>
 		<div class="status <?php echo ($status ? "bg-on" : "bg-off"); ?>" >
 			<!-- 
-				PHP-snutten ovenfor er plassert inne i <div>-elementet sin class="". Den spytter ut stilklassen "bg-on" eller "bg-off" avhengig av variabelen $status. 
-				Dette gjør at vi får en grønn eller rød bakgrunn, ettersom det er slik vi har definert disse stilklassene. 
+				PHP-snutten ovenfor er plassert inne i <div>-elementet sin class="". Den spytter ut 
+				stilklassen "bg-on" eller "bg-off" avhengig av variabelen $status. Dette gjør at vi
+				får en grønn eller rød bakgrunn, ettersom det er slik vi har definert disse 
+				stilklassene. 
 			-->
 			<h3> Akkurat nå er LED-en</h3>
 			<h2>
@@ -87,7 +98,8 @@
 			<div class="clarification">
 				Det vil si, ikke <i>akkurat</i> nå, men sist vi fikk en oppdatert pakke. 
 				Forrige pakke ble sendt <?php echo $updatetime; ?>.
-				Nå er tidspunktet <?php echo date("Y-m-d H:i:s"); ?>, det vil si at statusen er <?php echo $timediff;  ?> sekunder utdatert. 
+				Nå er tidspunktet <?php echo date("Y-m-d H:i:s"); ?>, det vil si at statusen er 
+				<?php echo $timediff;  ?> sekunder utdatert. 
 			</div>
 		</div>
 		<p class="gateways">
