@@ -48,6 +48,6 @@ Det er fullt mulig å bygge videre på dette. For eksempel kan man modifisere *s
 
 # Statusside med dynamisk layout og integrert data
 
-Dette eksempelet finner du i *ledstatus.php*. I denne fila skjer det litt mer. Data fra *datalog.txt* blir behandlet og plassert på ulike steder i HTML-koden. I tilleg har den et utseende som endrer seg avhengig av hva LoRa-devicen vår sender. Sjekk gjerne ut http://folk.ntnu.no/andestro/ttn/led.php for en operativ nettside. Så lenge TTN Uno-en min kjører så vil den skru av og på LED-en sin cirka hvert 30. sekund og dette blir rapportert til siden. 
+Dette eksempelet finner du i *ledstatus.php*. I denne fila skjer det litt mer. Data fra *datalog.txt* blir behandlet og plassert på ulike steder i HTML-koden. I tillegg har den et utseende som endrer seg avhengig av hva LoRa-devicen vår sender. Sjekk gjerne ut http://folk.ntnu.no/andestro/ttn/led.php for en operativ nettside. Så lenge TTN Uno-en min kjører så vil den skru av og på LED-en sin cirka hvert 30. sekund og dette blir rapportert til siden. 
 
 Mer forklarende informasjon om denne koden kommer, men det er lov å ta en titt på fila (som er kommentert) og se om du klarer å endre på den for å få til noe du er interessert i. 
