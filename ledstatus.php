@@ -24,7 +24,7 @@
 			}
 			.status{
 				color: white;
-				max-width: 400px;
+				width: 50%;
 				padding: 20px;
 				background:#fff;
 				margin: auto;
@@ -38,9 +38,16 @@
 			}
 			.clarification {
 				margin-top: 20px;
-				font-size: 10px; 
+				font-size: 12px; 
+			}
+			.gateways {
+				font-size: 10px;
+				max-width: 50%; 
+				margin: auto; 
+				margin-top: 4vw;
 			}
 		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php
 			// I denne PHP-blokken vil vi lese fra datalog.txt-fila vår.
 			// Vi vil prosessere dataen litt og lage noen variabler som
@@ -83,7 +90,7 @@
 				Nå er tidspunktet <?php echo date("Y-m-d H:i:s"); ?>, det vil si at statusen er <?php echo $timediff;  ?> sekunder utdatert. 
 			</div>
 		</div>
-		<p style="font-size: 8px; max-width: 600px; margin: auto; margin-top: 100px;">
+		<p class="gateways">
 			Gatewayen(e) vi er koblet til er <?php echo $gateways; ?>.
 		</p>
 
