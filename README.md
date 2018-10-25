@@ -50,4 +50,12 @@ Det er fullt mulig å bygge videre på dette. For eksempel kan man modifisere *s
 
 Dette eksempelet finner du i *ledstatus.php*. I denne fila skjer det litt mer. Data fra *datalog.txt* blir behandlet og plassert på ulike steder i HTML-koden. I tillegg har den et utseende som endrer seg avhengig av hva LoRa-devicen vår sender. Sjekk gjerne ut http://folk.ntnu.no/andestro/ttn/led.php for en operativ nettside. Så lenge TTN Uno-en min kjører så vil den skru av og på LED-en sin cirka hvert 30. sekund og dette blir rapportert til siden. 
 
-Mer forklarende informasjon om denne koden kommer, men det er lov å ta en titt på fila (som er kommentert) og se om du klarer å endre på den for å få til noe du er interessert i. 
+*Mer forklarende informasjon om denne koden kommer, men det er lov å ta en titt på fila (som er kommentert) og se om du klarer å endre på den for å få til noe du er interessert i.* 
+
+Slik siden er nå skjer det ingenting etter at vi har lastet den inn. For å få oppdatert informasjon er vi nødt til å laste inn siden på nytt ved å oppdatere den i nettleseren. Dette er litt kjedelig. Grunnen er at PHP-koden i utgangspunktet kun kjøres i det siden lastes. Heldigvis kan man bruke **JavaScript** til å oppdatere informasjon på nettsiden i sanntid. JavaScript er igjen sitt eget språk og kan inkluderes i HTML-koden slik som PHP, men det har litt andre funksjoner. Med JavaScript kan vi få timeren siden forrige oppdatering til å telle automatisk uten å laste inn siden på nytt. JavaScript kan også selv kalle på og kjøre PHP-script, slik at vi kan hente ut de siste oppdateringene når vi får en ny pakke som lagres i *datalog.txt*. For at JavaScript skal kunne snakke med PHP og kjøre script kan vi bruke noe som heter **Ajax**. 
+
+Et eksempel på hvordan man kan få en mer automatisk oppdatert nettside med bruk av JavaScript og Ajax kommer her etter hvert.
+
+# Automatisk oppdatert nettside med JavaScript og Ajax
+
+*Kommer...*
