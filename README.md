@@ -58,6 +58,6 @@ Et eksempel på hvordan man kan få en mer automatisk oppdatert nettside med bru
 
 # Automatisk oppdatert nettside med JavaScript og Ajax
 
-*Kommer...*
-
 Et eksempel der klokkeslettet og tiden siden forrige oppdatering oppdateres i sanntid er lagt til i *liveled.php*. Dette eksempelet bruker kun JavaScript for å kjøre sanntidsoppdatering, men vil ikke oppdage om det har kommet en ny pakke i *datalog.txt*. For å lese nye oppdateringer er vi nødt til å bruke PHP gjennom Ajax.
+
+*Kommer...*
