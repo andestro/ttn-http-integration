@@ -56,6 +56,20 @@ Slik siden er nå skjer det ingenting etter at vi har lastet den inn. For å få
 
 Et eksempel på hvordan man kan få en mer automatisk oppdatert nettside med bruk av JavaScript og Ajax kommer her etter hvert.
 
+# Sending andre typer data enn bare 0 og 1
+
+Dette eksempelet er basert på [denne youtubevideoen](https://youtu.be/-VaW9bBVrYM) og [denne guiden om bytes](https://www.thethingsnetwork.org/docs/devices/bytes.html) som anbefales sterkt å lese.
+
+Arduinokoden finner du i **senddata.ino**. Der sendes to tall: temp som er et desimaltall som vi antar alltid vil kunne utrykkes med to bytes eller mindre (2 bytes er lik 16 bits eller et tall mellom 0 og 2^15 (65536)) og count som er et heltall som vi antar kan uttrykkes en byte eller mindre. 
+
+En byte kan utrykkes ved to hexadesimale tall, mellom 00 og FF, derfor ser du utrykk som 0x00FF i koden. 0x symboliserer at det som kommer rett etter er et hexadesimaltall. Så 0x00FF betyr $0 \cdot 16^3 + 0 \cdot 16^2 + 15 \cdot 16^1 + 15 \cdot 16^0 = 255$.
+
+Operasjonene som blir gjort i arduinokoden på temp og count (feks temp & 0x00FF) er godt forklart i guiden om bytes linket til tidligere.
+
+I payload formats på the things network konsollen brukes bare decoder i dette eksemplet. Converter og validator slettes. Koden som legges inn i decoder finner du i **decoder.js**. Den converterer dataen sendt som bytes over LoRa-nettet tilbake til vanlige tall og sender tallene i et json-objekt til php-skriptet **save-tempant.php** på webserveren.
+
+**save-tempant.php** er veldig lik **save-data.php**. Json-objektet skriptet får inn deles opp i en array og de verdiene vi er interesserte i lagres i en tekstfil. Tekstfilen leses av **hjemmeside-tempant.php** og skrives ut til en nettside. Et fungerende eksempel kan sees på http://folk.ntnu.no/torstbol/ttn-http-integration/hjemmeside-tempant.php.
+
 # Automatisk oppdatert nettside med JavaScript og Ajax
 
 Et eksempel der klokkeslettet og tiden siden forrige oppdatering oppdateres i sanntid er lagt til i *liveled.php*. Dette eksempelet bruker kun JavaScript for å kjøre sanntidsoppdatering, men vil ikke oppdage om det har kommet en ny pakke i *datalog.txt*. For å lese nye oppdateringer er vi nødt til å bruke PHP gjennom Ajax.
