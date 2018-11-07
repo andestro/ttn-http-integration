@@ -62,7 +62,7 @@ Dette eksempelet er basert på [denne youtubevideoen](https://youtu.be/-VaW9bBVr
 
 Arduinokoden finner du i **senddata.ino**. Der sendes to tall: temp som er et desimaltall som vi antar alltid vil kunne utrykkes med to bytes eller mindre (2 bytes er lik 16 bits eller et tall mellom 0 og 2^15 (65536)) og count som er et heltall som vi antar kan uttrykkes en byte eller mindre. 
 
-En byte kan utrykkes ved to hexadesimale tall, mellom 00 og FF, derfor ser du utrykk som 0x00FF i koden. 0x symboliserer at det som kommer rett etter er et hexadesimaltall. Så 0x00FF betyr $0 \cdot 16^3 + 0 \cdot 16^2 + 15 \cdot 16^1 + 15 \cdot 16^0 = 255$.
+En byte kan utrykkes ved to hexadesimale tall, mellom 00 og FF, derfor ser du utrykk som 0x00FF i koden. 0x symboliserer at det som kommer rett etter er et hexadesimaltall. Så 0x00FF betyr <img src="img/CodeCogsEqn.gif">.
 
 Operasjonene som blir gjort i arduinokoden på temp og count (feks temp & 0x00FF) er godt forklart i guiden om bytes linket til tidligere.
 
