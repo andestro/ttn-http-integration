@@ -75,3 +75,7 @@ I payload formats på the things network konsollen brukes bare decoder i dette e
 Et eksempel der klokkeslettet og tiden siden forrige oppdatering oppdateres i sanntid er lagt til i *liveled.php*. Dette eksempelet bruker kun JavaScript for å kjøre sanntidsoppdatering, men vil ikke oppdage om det har kommet en ny pakke i *datalog.txt*. For å lese nye oppdateringer er vi nødt til å bruke PHP gjennom Ajax.
 
 *Kommer...*
+
+# Hente ut kun et antall linjer fra fil
+
+I fila *print-last-ten.php* har vi laget et eksempel som kun leser de 10 siste linjene av fila. Se gjerne på kommentarene i fila for å forstå hvordan den fungerer. Et eksempel på denne sida kan sees på http://folk.ntnu.no/andestro/ttn/print-last-ten.php 
