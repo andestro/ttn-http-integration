@@ -11,8 +11,9 @@ ok	- save file
 		$mydata = array(
 			'temp' => $json_obj['payload_fields']['temperature'],
 			'count' => $json_obj['payload_fields']['count'],
+                        'val' => $json_obj['payload_fields']['value'],
 			'time' => $json_obj['metadata']['time'],
-			
+			// Add your variables here, remember to also change hjemmeside-tempant.
 		);
 
 		// write the data fields to a log file (in text format)
@@ -22,7 +23,10 @@ ok	- save file
 		fwrite($file, 
 			$mydata['time'].' '.
 			$mydata['temp'].' '.
+                        $mydata['val'].' '.
 			$mydata['count'].' '
+// Add your variables in an array here.
+
 		);
 		foreach ($mydata['gateways'] as $gateway) { //loop through each gateway 
 			fwrite($file, $gateway['gtw_id'].' ');
